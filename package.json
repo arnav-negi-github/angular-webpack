@@ -1,0 +1,24 @@
+{
+  "name": "webpackconcepts",
+  "version": "1.0.0",
+  "description": "This repository holds the source code of my Webpack 2 Basics Series on YouTube. Make sure to watch the Videos on YouTube to understand how to use that code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/js/app.js dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnavnegistudy/angular-webpack.git"
+  },
+  "author": "Arnav",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/arnavnegistudy/angular-webpack/issues"
+  },
+  "homepage": "https://github.com/arnavnegistudy/angular-webpack#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
