@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open",
-    "build:prod": "webpack -p"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,11 +18,7 @@
   },
   "homepage": "https://github.com/arnavnegistudy/angular-webpack#readme",
   "devDependencies": {
-    "express": "^4.16.4",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-middleware": "^3.6.1",
-    "webpack-dev-server": "^3.2.1"
-  },
-  "dependencies": {}
+    "webpack-cli": "^3.3.0"
+  }
 }
