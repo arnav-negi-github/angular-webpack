@@ -9,7 +9,9 @@ const extractPlugin = new ExtractTextPlugin({
 
 module.exports = {
     mode: 'production',
-    entry: './src/js/app.js',
+    entry: {
+        app: './src/js/app.js'
+    },
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, 'dist'),
@@ -43,7 +45,7 @@ module.exports = {
                 use: ['html-loader']
             },
             {
-                test: /\.(jpg|png)/,
+                test: /\.(jpg|png)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -52,14 +54,31 @@ module.exports = {
                         publicPath: 'img/'
                     }
                 }]
+            },
+            {
+                test: /\.html$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]'
+                    }
+                }],
+                exclude: path.resolve(__dirname, 'src/index.html')
             }
         ]
     },
     plugins: [
         extractPlugin,
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            filename: "index.html",
+            template: 'src/index.html',
+            chunks: ['app']
         }),
+        // new HtmlWebpackPlugin({
+        //     filename: "users.html",
+        //     template: 'src/users.html',
+        //     chunks: []
+        // }),
         new CleanWebpackPlugin()
     ]
 }
