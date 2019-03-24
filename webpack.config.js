@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -68,6 +69,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+           $: 'jquery',
+           jQuery: 'jquery'
+        }),
         extractPlugin,
         new HtmlWebpackPlugin({
             filename: "index.html",
