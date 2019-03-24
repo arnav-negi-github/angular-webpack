@@ -52,8 +52,7 @@ module.exports = {
                         name: '[name].[ext]',
                         outputPath: 'img/',
                         publicPath: 'img/'
-                    }
-                }]
+                    }                }]
             },
             {
                 test: /\.html$/,
